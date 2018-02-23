@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <div>
-      <h2>Footer Works</h2>
+      <p>logo goes here</p>
+      <h3>PEACHY</h3>
+      <Link to='/'>Home</Link>
     </div>
   );
 }

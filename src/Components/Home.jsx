@@ -5,6 +5,7 @@ import ResultsData from './ResultsData';
 import UserAuth from './UserAuth';
 import UserDash from './UserDash';
 import SavedData from './SavedData';
+import IndividualResultDisplay from './IndividualResultDisplay';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <Route path='/signup' render={() => <UserAuth />} />
         <Route path='/userdash' render={() => <UserDash />} />
         <Route path='/saved' render={() => <SavedData />} />
+        <Route path='/singleitem' render={() => <IndividualResultDisplay />} />
       </Switch>
     </div>
   );

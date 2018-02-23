@@ -1,7 +1,9 @@
 import React from 'react';
-import SavedDisplay from './SavedDisplay';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import SavedDisplay from './SavedDisplay';
+
 
 function SavedData() {
   const savedResults = {
@@ -16,6 +18,7 @@ function SavedData() {
   };
   return (
     <div>
+      <p>logo</p>
       <Link to='/'>Home</Link>
       {Object.keys(savedResults).map(function(itemId) {
         let result = savedResults[itemId];
