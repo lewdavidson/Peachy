@@ -1,6 +1,9 @@
 import React from 'react';
-import ResultsDisplay from './ResultsDisplay';
 import PropTypes from 'prop-types';
+
+import ResultsDisplay from './ResultsDisplay';
+import StandardNav from './StandardNav';
+import Footer from './Footer';
 
 function ResultsData() {
 
@@ -16,6 +19,7 @@ function ResultsData() {
   };
   return(
     <div>
+      <StandardNav />
       {Object.keys(searchResults).map(function(itemId) {
         let result = searchResults[itemId];
         return <ResultsDisplay photo={result.photo}
@@ -23,6 +27,7 @@ function ResultsData() {
           key={itemId}
           itemId={itemId}/>;
       })}
+      <Footer />
     </div>
   );
 }

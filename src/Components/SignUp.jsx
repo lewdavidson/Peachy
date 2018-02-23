@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   return(
@@ -7,7 +8,7 @@ function SignUp() {
       <input placeholder='choose a user name'></input>
       <input placeholder='choose a password'></input>
       <input placeholder='email address'></input>
-      <button>Sign Up</button>
+      <Link to='/userdash'>Sign Up</Link>
     </div>
   );
 }
