@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import SearchBar from './SearchBar';
-import Header from './Header';
+import HomeView from './HomeView';
+import ResultsDisplay from './ResultsDisplay';
 
 function Home() {
   return (
     <div>
-      <Header />
       <Switch>
-        <Route exact path='/' render={() => <SearchBar />}/>
+        <Route exact path='/' render={() => <HomeView />}/>
+        <Route path='/results' render={() => <ResultsDisplay />}/>
       </Switch>
     </div>
   );
