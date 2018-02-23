@@ -1,19 +1,30 @@
 import React from 'react';
+import ResultsDisplay from './ResultsDisplay';
 import PropTypes from 'prop-types';
 
 function ResultsData(props) {
-  return (
+
+  const searchResults = {
+    '0': {
+      photo: 'blah blah',
+      title: 'barf'
+    }
+  };
+  return(
     <div>
-      <h3>{props.photo}</h3>
-      <h4>{props.title}</h4>
-      <hr/>
+      {Object.keys(searchResults).map(function(itemId) {
+        let result = searchResults[itemId];
+        return <ResultsDisplay photo={result.photo}
+          title={result.title}
+          key={itemId}
+          itemId={itemId}/>;
+      })}
     </div>
   );
 }
 
 ResultsData.propTypes = {
-  photo: PropTypes.string,
-  title: PropTypes.string,
-  key: PropTypes.string
+  searchResults: PropTypes.object
 };
+
 export default ResultsData;

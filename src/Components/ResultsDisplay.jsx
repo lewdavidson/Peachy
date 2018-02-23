@@ -1,21 +1,21 @@
 import React from 'react';
-import ResultsData from './ResultsData';
 import PropTypes from 'prop-types';
+import ResultsData from './ResultsData';
 
 function ResultsDisplay(props) {
   return (
     <div>
-      {props.searchResults.map((result) =>
-        <ResultsData photo={result.photo}
-          title={result.title}
-          key={result.key}/>
-      )}
+      <h3>{props.photo}</h3>
+      <h4>{props.title}</h4>
+      <hr/>
     </div>
   );
 }
 
 ResultsDisplay.propTypes = {
-  searchResults: PropTypes.array
+  photo: PropTypes.string,
+  title: PropTypes.string,
+  key: PropTypes.string,
+  itemId: PropTypes.string
 };
-
 export default ResultsDisplay;
