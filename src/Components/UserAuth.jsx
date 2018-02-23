@@ -1,8 +1,14 @@
 import React from 'react';
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 
 function UserAuth() {
   return (
-    <div>UserAuth Works</div>
+    <div>
+      <LogIn />
+      <SignUp />
+
+    </div>
   );
 }
 
