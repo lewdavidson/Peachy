@@ -2,7 +2,7 @@ import React from 'react';
 import ResultsDisplay from './ResultsDisplay';
 import PropTypes from 'prop-types';
 
-function ResultsData(props) {
+function ResultsData() {
 
   const searchResults = {
     '0': {
