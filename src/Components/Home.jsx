@@ -4,6 +4,7 @@ import HomeView from './HomeView';
 import ResultsData from './ResultsData';
 import UserAuth from './UserAuth';
 import UserDash from './UserDash';
+import SavedData from './SavedData';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         <Route path='/login' render={() => <UserAuth />} />
         <Route path='/signup' render={() => <UserAuth />} />
         <Route path='/userdash' render={() => <UserDash />} />
+        <Route path='/saved' render={() => <SavedData />} />
       </Switch>
     </div>
   );

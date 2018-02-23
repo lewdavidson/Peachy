@@ -1,8 +1,15 @@
 import React from 'react';
+import UserNav from './UserNav';
+import SearchBar from './SearchBar';
+import Footer from './Footer';
 
 function UserDash() {
   return(
-    <div>Welcome to user dash</div>
+    <div>
+      <UserNav />
+      <SearchBar />
+      <Footer />
+    </div>
   );
 }
 
