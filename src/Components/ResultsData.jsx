@@ -8,6 +8,10 @@ function ResultsData(props) {
     '0': {
       photo: 'blah blah',
       title: 'barf'
+    },
+    '1': {
+      photo: 'example',
+      title: 'example'
     }
   };
   return(
