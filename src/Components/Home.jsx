@@ -12,7 +12,7 @@ function Home() {
     <div>
       <Switch>
         <Route exact path='/' render={() => <HomeView />}/>
-        <Route path='/results' render={() => <ResultsData />}/>
+        <Route path='/results' render={() => <ResultsData onSelectedRecipe={this.handleSelectedRecipe}/>}/>
         <Route path='/login' render={() => <UserAuth />} />
         <Route path='/signup' render={() => <UserAuth />} />
         <Route path='/userdash' render={() => <UserDash />} />

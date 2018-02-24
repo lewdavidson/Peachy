@@ -5,7 +5,12 @@ import ResultsDisplay from './ResultsDisplay';
 import StandardNav from './StandardNav';
 import Footer from './Footer';
 
-function ResultsData() {
+function ResultsData(props) {
+  function handleSelectedRecipe(itemId) {
+    let selectedRecipe = props.searchResults[itemId];
+    console.log(selectedRecipe);
+    return selectedRecipe;
+  }
 
   const searchResults = {
     '0': {
@@ -33,7 +38,8 @@ function ResultsData() {
 }
 
 ResultsData.propTypes = {
-  searchResults: PropTypes.object
+  searchResults: PropTypes.object,
+  onSelectedRecipe: PropTypes.func
 };
 
 export default ResultsData;
