@@ -2,8 +2,8 @@ import * as types from './../constants/ActionTypes';
 import constants from './../constants';
 import v4 from 'uuid/v4';
 
-export const requestRecipe = (title, localRecipeId) => ({
-  type: types.REQUEST_RECIPE,
+export const receiveRecipe = (title, localRecipeId) => ({
+  type: types.RECEIVE_RECIPE,
   title,
   recipeId: localRecipeId
 });
@@ -48,8 +48,7 @@ export function fetchRecipe(title) {
     title = title.split(' ').join('_');
     return fetch('https://api.edamam.com/search?q=' + title + '&app_id=12fbe57b&app_key=5e0a825d7ea3696581d2b4d757c4b747&health=vegan').then(
       response => response.json(),
-      error => console.log('error message: ', error)
-      console.log(json);
+      error => alert('error message: ', error)
     ).then(function(json){
       if (json.hits.length > 0) {
         for (let i = 0; i < 10; i++) {
@@ -60,7 +59,7 @@ export function fetchRecipe(title) {
           dispatch(addRecipe(title, image, link, ingredients));
         }
       } else {
-        console.log('no recipes found');
+        alert('no recipes found');
       }
     });
   };

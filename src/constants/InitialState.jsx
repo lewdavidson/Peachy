@@ -1,8 +1,4 @@
 export const initialState = {
-  user: {
-    currentUserId: null,
-    savedRecipes: {}
-  },
   currentRecipeId: 1,
   recipesById: {
     1: {
@@ -13,5 +9,9 @@ export const initialState = {
       recipeId: 1,
       isSaved: null
     }
-  }
+  },
+  user: {
+    currentUserId: null,
+    savedRecipes: {}
+  },
 };

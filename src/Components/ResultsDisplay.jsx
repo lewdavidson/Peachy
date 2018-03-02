@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { recieveRecipe } from './../actions';
 
 const ResultsDisplay = ({recipe}) => {
   const { title, image, ingredients, link, recipeId } = recipe;

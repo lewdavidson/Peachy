@@ -7,6 +7,7 @@ import StandardNav from './StandardNav';
 import Footer from './Footer';
 
 function ResultsData (){
+
   return(
     <div>
       <StandardNav />
