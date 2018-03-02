@@ -8,14 +8,16 @@ import { Provider } from 'react-redux';
 import App from './Components/App';
 import createRecipeReducer from './reducers/createRecipeReducer';
 
-const store = createStore();
+const store = createStore(createRecipeReducer);
 
 ReactDOM.render(
   <AppContainer>
     <HashRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>,
+      <div>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </div>
     </HashRouter>
   </AppContainer>,
   document.getElementById('react-app-root')
@@ -23,9 +25,9 @@ ReactDOM.render(
 
 
 /*eslint-disable */
-// if (module.hot) {
-//   module.hot.accept('./Components/App', () => {
-//     render(App);
-//   });
-// }
+if (module.hot) {
+  module.hot.accept('./Components/App', () => {
+    render(App);
+  });
+}
 /*eslint-enable */
