@@ -7,15 +7,15 @@ import StandardNav from './StandardNav';
 import Footer from './Footer';
 
 function ResultsData (){
-
   return(
     <div>
       <StandardNav />
       {Object.keys(this.props.recipeList).map(recipeId => {
         let recipe = this.props.recipeList[recipeId];
-        return <ResultsDisplay photo={recipe.photo}
+        return <ResultsDisplay image={recipe.photo}
           title={recipe.title}
           link={recipe.link}
+          ingredients={[recipe.ingredients]}
           key={recipeId}
           recipeId={recipeId}/>;
       })}
@@ -25,7 +25,7 @@ function ResultsData (){
 }
 
 ResultsData.propTypes = {
-  recipeList: PropTypes.object,
+  recipeList: PropTypes.object
 };
 
 const mapStateToProps = state => {

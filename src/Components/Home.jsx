@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import HomeView from './HomeView';
 import ResultsData from './ResultsData';
 import UserAuth from './UserAuth';
@@ -23,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(connect()(Home));

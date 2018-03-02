@@ -7,18 +7,18 @@ const ResultsDisplay = ({recipe}) => {
   const { title, image, ingredients, link, recipeId } = recipe;
   const ingredientsArray = recipe.ingredients;
   const ingredientsList = ingredientsArray.map(function(ingredient, id){
-    return <li key={id}>{ingredient}</li>;
-  })
+    return <li key={id}>{ingredients}</li>;
+  });
 
   return (
     <div>
-      <img src={recipe.image}></img>
-      <h4>{recipe.title}</h4>
+      <img src={image}></img>
+      <h4>{title}</h4>
       <p>Ingredients:</p>
       <ul>
         {ingredientsList}
       </ul>
-      <p>Visit the <a href={recipe.link}>full site</a>for preparation instructions</p>
+      <p>Visit the <a href={link}>full site</a>for preparation instructions</p>
       <button><Link to='/singleitem'>Show More</Link></button>
       <hr/>
     </div>
@@ -29,12 +29,25 @@ ResultsDisplay.propTypes = {
   recipe: PropTypes.object,
   image: PropTypes.string,
   title: PropTypes.string,
-  instructions: PropTypes.array,
+  ingredients: PropTypes.array,
   link: PropTypes.string,
   key: PropTypes.string,
   itemId: PropTypes.string,
-  onSelectedRecipe: PropTypes.any
 };
 
+const mapStateToProps = state => {
+  let info;
+  const recipe = state.recipesById[state.currentRecipeId];
+  info = {
+    id: state.currentRecipeId,
+    title: recipe.title,
+    image: recipe.image,
+    ingredients: recipe.ingredients,
+    link: recipe.link
+  };
+  return {
+    recipe: info
+  };
+};
 
-export default connect()(ResultsDisplay);
+export default connect(mapStateToProps)(ResultsDisplay);
