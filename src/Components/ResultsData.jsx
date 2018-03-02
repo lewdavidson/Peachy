@@ -1,36 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import ResultsDisplay from './ResultsDisplay';
 import StandardNav from './StandardNav';
 import Footer from './Footer';
 
-function ResultsData(props) {
-  function handleSelectedRecipe(itemId) {
-    let selectedRecipe = props.searchResults[itemId];
-    console.log(selectedRecipe);
-    return selectedRecipe;
-  }
+function ResultsData (){
 
-  const searchResults = {
-    '0': {
-      photo: 'blah blah',
-      title: 'barf'
-    },
-    '1': {
-      photo: 'example',
-      title: 'example'
-    }
-  };
   return(
     <div>
       <StandardNav />
-      {Object.keys(searchResults).map(function(itemId) {
-        let result = searchResults[itemId];
-        return <ResultsDisplay photo={result.photo}
-          title={result.title}
-          key={itemId}
-          itemId={itemId}/>;
+      {Object.keys(this.props.recipeList).map(recipeId => {
+        let recipe = this.props.recipeList[recipeId];
+        return <ResultsDisplay photo={recipe.photo}
+          title={recipe.title}
+          link={recipe.link}
+          key={recipeId}
+          recipeId={recipeId}/>;
       })}
       <Footer />
     </div>
@@ -38,8 +25,13 @@ function ResultsData(props) {
 }
 
 ResultsData.propTypes = {
-  searchResults: PropTypes.object,
-  onSelectedRecipe: PropTypes.func
+  recipeList: PropTypes.object,
 };
 
-export default ResultsData;
+const mapStateToProps = state => {
+  return {
+    recipeList: state.recipesById
+  };
+};
+
+export default connect(mapStateToProps)(ResultsData);
