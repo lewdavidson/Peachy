@@ -6,13 +6,13 @@ import ResultsDisplay from './ResultsDisplay';
 import StandardNav from './StandardNav';
 import Footer from './Footer';
 
-function ResultsData (){
+function ResultsData (props){
 
   return(
     <div>
       <StandardNav />
-      {Object.keys(this.props.recipeList).map(recipeId => {
-        let recipe = this.props.recipeList[recipeId];
+      {Object.keys(props.recipeList).map(recipeId => {
+        let recipe = props.recipeList[recipeId];
         return <ResultsDisplay image={recipe.photo}
           title={recipe.title}
           link={recipe.link}
