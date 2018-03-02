@@ -6,29 +6,26 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './Components/App';
-import createRecipeReducer from './reducers';
+import createRecipeReducer from './reducers/createRecipeReducer';
 
-const store = createStore(createRecipeReducer);
+const store = createStore();
 
-const render = (Component) => {
-  ReactDOM.render(
-    <AppContainer>
-      <HashRouter>
-        <Provider store={store}>
-          <Component/>
-        </Provider>,
-      </HashRouter>
-    </AppContainer>,
-    document.getElementById('react-app-root')
-  );
-};
+ReactDOM.render(
+  <AppContainer>
+    <HashRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    </HashRouter>
+  </AppContainer>,
+  document.getElementById('react-app-root')
+);
 
-render(App);
 
 /*eslint-disable */
-if (module.hot) {
-  module.hot.accept('./Components/App', () => {
-    render(App);
-  });
-}
+// if (module.hot) {
+//   module.hot.accept('./Components/App', () => {
+//     render(App);
+//   });
+// }
 /*eslint-enable */

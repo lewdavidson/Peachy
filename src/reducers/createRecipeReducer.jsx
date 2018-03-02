@@ -1,11 +1,14 @@
-const { initialState } = constants;
+const { initialState, types } = constants;
 import constants from './../constants';
+import { connect } from 'react-redux';
 
-const createRecipeReducer = (state = initialState, action) => {
+const createRecipeReducer = (state = initialState.currentRecipeId, action) => {
   switch(action.type) {
-    case types.REQUEST_RECIPE:
-  };
-  return state;
+  case types.REQUEST_RECIPE:
+    return action.newSelectedRecipeId;
+  default:
+    return state;
+  }
 };
 
-export default createRecipeReducer;
+export default connect()(createRecipeReducer);
