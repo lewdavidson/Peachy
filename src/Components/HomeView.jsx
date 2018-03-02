@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import SearchBar from './SearchBar';
 import Header from './Header';
 import UserAction from './UserAction';
@@ -13,4 +15,4 @@ function HomeView() {
   );
 }
 
-export default HomeView;
+export default connect()(HomeView);
