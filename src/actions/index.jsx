@@ -18,16 +18,15 @@ export const receiveRecipe = (title, localRecipeId) => ({
 // };
 //will eventually handle retreiving recipes from firebase
 
-// export function addRecipe(title, image, link, ingredients) {
-//   return () => recipes.push({
-//     title: title,
-//     image: image,
-//     link: link,
-//     ingredients: ingredients
-//   });
-// };
+export function addRecipe(title, image, link, ingredients) {
+  return () => recipes.push({
+    title: title,
+    image: image,
+    link: link,
+    ingredients: ingredients
+  });
+};
 
-//will eventually add recipes to firebase
 
 // export function watchFirebase(title) {
 //   return function(dispatch) {

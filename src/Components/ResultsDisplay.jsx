@@ -7,8 +7,8 @@ import { recieveRecipe } from './../actions';
 const ResultsDisplay = ({recipe}) => {
   const { title, image, ingredients, link, recipeId } = recipe;
   const ingredientsArray = recipe.ingredients;
-  const ingredientsList = ingredientsArray.map(function(ingredient, id){
-    return <li key={id}>{ingredients}</li>;
+  const ingredientsList = ingredientsArray.map(function(ingredient, index){
+    return <li key={index}>{ingredient}</li>;
   });
 
   return (
@@ -19,7 +19,7 @@ const ResultsDisplay = ({recipe}) => {
       <ul>
         {ingredientsList}
       </ul>
-      <p>Visit the <a href={link}>full site</a>for preparation instructions</p>
+      <p>Visit the <a href={link}>full site </a>for preparation instructions</p>
       <button><Link to='/singleitem'>Show More</Link></button>
       <hr/>
     </div>
