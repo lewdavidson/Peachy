@@ -10,16 +10,28 @@ function ResultsData (props){
 
   return(
     <div>
+      <style jsx>{`
+          .result-page {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+        `}</style>
       <StandardNav />
-      {Object.keys(props.recipeList).map(recipeId => {
-        let recipe = props.recipeList[recipeId];
-        return <ResultsDisplay image={recipe.photo}
-          title={recipe.title}
-          link={recipe.link}
-          ingredients={[recipe.ingredients]}
-          key={recipeId}
-          recipeId={recipeId}/>;
-      })}
+      <div className='result-page'>
+        {Object.keys(props.recipeList).map(recipeId => {
+          let recipe = props.recipeList[recipeId];
+          return <ResultsDisplay image={recipe.image}
+            title={recipe.title}
+            link={recipe.link}
+            ingredients={recipe.ingredients}
+            key={recipeId}
+            recipeId={recipeId}/>;
+        })}
+      </div>
       <Footer />
     </div>
   );

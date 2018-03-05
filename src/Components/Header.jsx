@@ -2,22 +2,29 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className='header'>
+    <div>
       <style jsx>{`
           .header {
-            font-family:'Comfortaa', cursive;
             font-weight: bold;
-            flex-grow: 2;
-            height: 150px;
           }
           .header-lead {
             margin: 0;
-            color: #0236a2;
-            font-size: 4em;
+            color: #ED6A5E;
+            font-size: 5em;
+            font-family: 'Coiny', cursive;
+            height: 100px;
+          }
+          .header-para {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #EEC643;
+            font-family: 'Raleway', sans-serif;
           }
       `}</style>
-    <h1 className="header-lead">Welcome to Peachy!</h1>
-      <h3 className='header-para'>A Vegan Recipe Webiste</h3>
+      <div className='header'>
+        <h1 className="header-lead">Peachy!</h1>
+        <h3 className='header-para'>A Vegan Recipe Finder</h3>
+      </div>
     </div>
   );
 }

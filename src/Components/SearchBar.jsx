@@ -16,7 +16,7 @@ const SearchBar = ({dispatch}) => {
         input.value = '';
       }}>
         <input type="text" placeholder="Search for a recipe" ref={node => {input = node;}}></input>
-        <Link to='/results'><button type='submit'>Find a Recipe</button></Link>
+        <Link to='/results'><button type='submit'>Search</button></Link>
       </form>
     </div>
   );

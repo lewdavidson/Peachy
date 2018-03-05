@@ -16,6 +16,9 @@ function Home() {
             max-width: 300px;
             max-height: 280px;
           }
+          a:hover {
+            cursor: pointer;
+          }
       `}</style>
       <Switch>
         <Route exact path='/' render={() => <HomeView />}/>
