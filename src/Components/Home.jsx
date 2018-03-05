@@ -10,7 +10,13 @@ import IndividualResultDisplay from './IndividualResultDisplay';
 
 function Home() {
   return (
-    <div>
+    <div className='main'>
+      <style jsx global>{`
+          .result-img {
+            max-width: 300px;
+            max-height: 280px;
+          }
+      `}</style>
       <Switch>
         <Route exact path='/' render={() => <HomeView />}/>
         <Route path='/results' render={() => <ResultsData />}/>

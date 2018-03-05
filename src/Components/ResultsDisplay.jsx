@@ -13,7 +13,7 @@ const ResultsDisplay = ({recipe}) => {
 
   return (
     <div>
-      <img src={image}></img>
+      <img className="result-img" src={image}></img>
       <h4>{title}</h4>
       <p>Ingredients:</p>
       <ul>

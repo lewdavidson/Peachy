@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import StandardNav from './StandardNav';
+import Footer from './Footer';
+
 function IndividualResultDisplay(props) {
 
   return (
-    <div>{props.selectedRecipe}</div>
+    <div>
+      <StandardNav />
+      {props.selectedRecipe}
+      <Footer />
+    </div>
   );
 }
 

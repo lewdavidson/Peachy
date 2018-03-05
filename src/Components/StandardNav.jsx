@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import UserAction from './UserAction';
+import logo from './assets/peach2.svg';
 
 function StandardNav() {
   return (
@@ -22,7 +23,15 @@ function StandardNav() {
             font-family: 'Comfortaa', cursive;
             color: white;
             font-size: 1.5em;
-            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+          }
+          .logo {
+            height: 50px;
+            width: 50px;
+            padding-top: 20px;
+            padding-right: 10px;
+            padding-left: 5px;
           }
           .options {
             font-family: 'Raleway', sans-serif;
@@ -45,7 +54,10 @@ function StandardNav() {
           }
         `}</style>
       <div className="nav-body">
-        <h2 className="lead">PEACHY</h2>
+        <div className="lead">
+          <img className="logo" src={logo} />
+          <h2>PEACHY</h2>
+        </div>
         <div className="options">
           <SearchBar />
           <div className="links">
