@@ -5,23 +5,24 @@ import { connect } from 'react-redux';
 import ResultsDisplay from './ResultsDisplay';
 import StandardNav from './StandardNav';
 import Footer from './Footer';
+import smSteps from './assets/smallsteps.png';
 
 function ResultsData (props){
+  let styles = {
+    display:'flex',
+    height: '100vh',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    paddingTop: '25px',
+    backgroundImage: 'url(' + smSteps + ')',
+  };
 
   return(
     <div>
-      <style jsx>{`
-          .result-page {
-            display: flex;
-            height: 100%;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-left: 10px;
-            margin-right: 10px;
-          }
-        `}</style>
       <StandardNav />
-      <div className='result-page'>
+      <div style={styles}>
         {Object.keys(props.recipeList).map(recipeId => {
           let recipe = props.recipeList[recipeId];
           return <ResultsDisplay image={recipe.image}

@@ -15,6 +15,9 @@ function Footer() {
             font-family: 'Raleway', sans-serif;
             margin-bottom: 0;
             color: #FFF;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
           }
           .footer-main h3 {
             margin-right: 15px;

@@ -16,7 +16,6 @@ function StandardNav() {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
             height: 65px;
           }
           .lead {
@@ -50,7 +49,7 @@ function StandardNav() {
             border: 1px solid black;
           }
           links {
-            flex-direction: flex-end;
+            float: right;
           }
         `}</style>
       <div className="nav-body">
