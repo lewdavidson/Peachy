@@ -1,12 +1,17 @@
 import * as types from './../constants/ActionTypes';
 import constants from './../constants';
 import v4 from 'uuid/v4';
+// const { firebaseConfig } = constants;
+// import Firebase from 'firebase';
 
-export const receiveRecipe = (title, localRecipeId) => ({
-  type: types.RECEIVE_RECIPE,
-  title,
-  recipeId: localRecipeId
-});
+// firebase.initializeApp(firebaseConfig);
+// const recipes = firebase.database().ref('recipes');
+
+// export const receiveRecipe = (title, localRecipeId) => ({
+//   type: types.RECEIVE_RECIPE,
+//   title,
+//   recipeId: localRecipeId
+// });
 
 //will need some sort of change recipe action to pull up individual recipes at a time.
 
@@ -18,14 +23,14 @@ export const receiveRecipe = (title, localRecipeId) => ({
 // };
 //will eventually handle retreiving recipes from firebase
 
-export function addRecipe(title, image, link, ingredients) {
-  return () => recipes.push({
-    title: title,
-    image: image,
-    link: link,
-    ingredients: ingredients
-  });
-};
+export const addRecipe = (title, image, link, ingredients, recipeId) => ({
+  type: types.RECEIVE_RECIPE,
+  title,
+  image,
+  link,
+  ingredients,
+  recipeId
+});
 
 
 // export function watchFirebase(title) {
@@ -55,7 +60,9 @@ export function fetchRecipe(title) {
           const image = json.hits[i].recipe.image;
           const link = json.hits[i].recipe.url;
           const ingredients = json.hits[i].recipe.ingredientLines;
-          dispatch(addRecipe(title, image, link, ingredients));
+          const recipeId = localRecipeId;
+          console.log(title, image, link, ingredients);
+          dispatch(addRecipe(title, image, link, ingredients, recipeId));
         }
       } else {
         alert('no recipes found');

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { fetchRecipe } from './../actions';
 import PropTypes from 'prop-types';
 
 const SearchBar = ({dispatch}) => {
@@ -15,7 +16,11 @@ const SearchBar = ({dispatch}) => {
         dispatch(fetchRecipe(input.value.trim()));
         input.value = '';
       }}>
-        <input type="text" placeholder="Search for a recipe" ref={node => {input = node;}}></input>
+        <input
+          type="text"
+          placeholder="Search for a recipe"
+          ref={node => {input = node;}}>
+        </input>
         <Link to='/results'><button type='submit'>Search</button></Link>
       </form>
     </div>

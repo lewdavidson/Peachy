@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import ResultsDisplay from './ResultsDisplay';
 import StandardNav from './StandardNav';
 import Footer from './Footer';
 import smSteps from './assets/smallsteps.png';
 
-function ResultsData (props){
-  let styles = {
+function ResultsData ({recipeList}){
+  const styles = {
     display:'flex',
     height: '100vh',
     justifyContent: 'space-between',
@@ -23,9 +22,10 @@ function ResultsData (props){
     <div>
       <StandardNav />
       <div style={styles}>
-        {Object.keys(props.recipeList).map(recipeId => {
-          let recipe = props.recipeList[recipeId];
-          return <ResultsDisplay        image={recipe.image}
+        {Object.keys(recipeList).map(recipeId => {
+          let recipe = recipeList[recipeId];
+          return <ResultsDisplay
+            image={recipe.image}
             title={recipe.title}
             link={recipe.link}
             ingredients={recipe.ingredients}
@@ -42,10 +42,4 @@ ResultsData.propTypes = {
   recipeList: PropTypes.object
 };
 
-const mapStateToProps = state => {
-  return {
-    recipeList: state.recipesById
-  };
-};
-
-export default connect(mapStateToProps)(ResultsData);
+export default ResultsData;

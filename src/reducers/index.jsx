@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import recipeChangeReducer from './recipeChangeReducer';
+import recipeGetReducer from './recipeGetReducer';
 import createRecipeReducer from './createRecipeReducer';
 
 const rootReducer = combineReducers({
-  currentRecipeId: recipeChangeReducer,
+  currentRecipeId: recipeGetReducer,
   recipesById: createRecipeReducer
 });
 

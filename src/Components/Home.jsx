@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HomeView from './HomeView';
 import ResultsData from './ResultsData';
 import UserAuth from './UserAuth';
-import UserDash from './UserDash';
 import SavedData from './SavedData';
 import IndividualResultDisplay from './IndividualResultDisplay';
 
-function Home() {
+function Home(props) {
   return (
     <div className='main'>
       <style jsx global>{`
@@ -26,15 +26,24 @@ function Home() {
       `}</style>
       <Switch>
         <Route exact path='/' render={() => <HomeView />}/>
-        <Route path='/results' render={() => <ResultsData />}/>
+        <Route path='/results' render={() => <ResultsData recipeList={props.recipeList} />}/>
         <Route path='/login' render={() => <UserAuth />} />
         <Route path='/signup' render={() => <UserAuth />} />
-        <Route path='/userdash' render={() => <UserDash />} />
-        <Route path='/saved' render={() => <SavedData />} />
+        <Route path='/saved' render={() => <SavedData  recipeList={props.recipeList} />} />
         <Route path='/singleitem' render={() => <IndividualResultDisplay />} />
       </Switch>
     </div>
   );
 }
 
-export default withRouter(connect()(Home));
+Home.propTypes = {
+  recipeList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    recipeList: state.recipesById
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(Home));

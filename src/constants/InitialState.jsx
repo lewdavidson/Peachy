@@ -1,5 +1,5 @@
 export const initialState = {
-  currentRecipeId: 1,
+  currentRecipeId: null,
   recipesById: {
     1: {
       title: 'Potato Soup',

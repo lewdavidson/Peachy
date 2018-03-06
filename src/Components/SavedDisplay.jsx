@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import likeBtn from './assets/peach1.svg';
 
 
-function SavedDisplay(props) {
-
+const SavedDisplay = (props)  => {
   const ingredientsArray = props.ingredients;
   const ingredientsList = ingredientsArray.map(function(ingredient, index){
     return <li key={index}>{ingredient}</li>;
@@ -60,7 +59,7 @@ function SavedDisplay(props) {
       <img className='likeBtn' src={likeBtn}></img>
     </div>
   );
-}
+};
 
 
 SavedDisplay.propTypes = {
@@ -68,8 +67,7 @@ SavedDisplay.propTypes = {
   ingredients: PropTypes.array,
   title: PropTypes.string,
   link: PropTypes.string,
-  key: PropTypes.string,
   itemId: PropTypes.string
 };
 
-export default connect() (SavedDisplay);
+export default SavedDisplay;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import SavedDisplay from './SavedDisplay';
 import StandardNav from './StandardNav';
@@ -8,7 +7,7 @@ import Footer from './Footer';
 import smSteps from './assets/smallsteps.png';
 
 
-function SavedData(props) {
+function SavedData({recipeList}){
   const styles = {
     height: '100vh',
     flexWrap: 'wrap',
@@ -37,8 +36,8 @@ function SavedData(props) {
       <div style={styles}>
         <h2 className='header'>Your Saved Recipes</h2>
         <div style={flex}>
-          {Object.keys(props.recipeList).map(recipeId => {
-            let result = props.recipeList[recipeId];
+          {Object.keys(recipeList).map(recipeId => {
+            let result = recipeList[recipeId];
             return <SavedDisplay
               image={result.image}
               title={result.title}
@@ -59,10 +58,5 @@ SavedData.propTypes = {
   recipeList: PropTypes.object
 };
 
-const mapStateToProps = state => {
-  return {
-    recipeList: state.recipesById
-  };
-};
 
-export default connect(mapStateToProps)(SavedData);
+export default SavedData;
