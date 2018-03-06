@@ -26,7 +26,6 @@ export function fetchRecipe(title) {
           const ingredients = json.hits[i].recipe.ingredientLines;
           const recipeId = v4();
           dispatch(addRecipe(title, image, link, ingredients, recipeId));
-          // console.log(title, image, link, ingredients, recipeId);
         }
       } else {
         alert('no recipes found');

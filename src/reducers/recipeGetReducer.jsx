@@ -6,19 +6,17 @@ const recipeGetReducer = (state = initialState, action) => {
   let newRecipeByIdEntry;
   switch(action.type) {
   case types.RECEIVE_RECIPE:
-    newRecipeByIdEntry = Object.assign({}, state.recipesById, {
+    newRecipeByIdEntry = {
       title: action.title,
       image: action.image,
       link: action.link,
       ingredients: action.ingredients,
       recipeId: action.recipeId
-    });
-    console.log(initialState);
-    console.log(newRecipeByIdEntry);
-    // newRecipeByIdStateSlice = Object.assign({}, state.recipesById, {
-    //   [action.recipeId]: newRecipeByIdEntry
-    // });
-    return newRecipeByIdEntry;
+    };
+    newRecipeByIdStateSlice = Object.assign({}, state);
+    newRecipeByIdStateSlice.recipesById[action.recipeId] = newRecipeByIdEntry;
+    console.log(newRecipeByIdStateSlice);
+    return newRecipeByIdStateSlice;
   default:
     return state;
   }
