@@ -2,17 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { recieveRecipe } from './../actions';
 import likeBtn from './assets/peach1.svg';
 
 const ResultsDisplay = (props) => {
 //   const { title, image, ingredients, link, recipeId } = recipe;
   const ingredientsArray = props.ingredients;
-  console.log('image', props.image);
   const ingredientsList = ingredientsArray.map(function(ingredient, index){
     return <li key={index}>{ingredient}</li>;
   });
-  console.log(ingredientsList);
 
   return (
     <div className='result-body'>
@@ -23,7 +20,7 @@ const ResultsDisplay = (props) => {
             padding: 10px;
             width: 300px;
             background: white;
-            max-height: 510px;
+            max-height: 530px;
           }
           .result-body h4 {
             text-align: center;
@@ -37,6 +34,7 @@ const ResultsDisplay = (props) => {
           }
           .result-body ul {
             height: 100px;
+            margin-bottom: 30px;
           }
           .result-body p {
             text-align: center;

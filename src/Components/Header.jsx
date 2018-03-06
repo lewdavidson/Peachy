@@ -17,7 +17,7 @@ function Header() {
           .header-para {
             margin-top: 0;
             margin-bottom: 30px;
-            color: #EEC643;
+            color: #6B6D76;
             font-family: 'Raleway', sans-serif;
           }
       `}</style>

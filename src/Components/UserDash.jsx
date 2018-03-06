@@ -1,12 +1,12 @@
 import React from 'react';
-import UserNav from './UserNav';
+import StandardNav from './StandardNav';
 import SearchBar from './SearchBar';
 import Footer from './Footer';
 
 function UserDash() {
   return(
     <div>
-      <UserNav />
+      <StandardNav />
       <SearchBar />
       <Footer />
     </div>

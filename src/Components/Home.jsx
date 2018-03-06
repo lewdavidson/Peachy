@@ -16,6 +16,10 @@ function Home() {
             max-width: 300px;
             max-height: 280px;
           }
+          .saved-img {
+            max-width: 300px;
+            max-height: 280px;
+          }
           a:hover {
             cursor: pointer;
           }

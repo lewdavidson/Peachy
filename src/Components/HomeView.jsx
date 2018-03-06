@@ -56,8 +56,8 @@ function HomeView() {
             width: 130px;
             border-radius: 5px;
             border: 2px solid black;
-            background-color: #ED6A5E;
-            color: #FFF;
+            background-color: #FFF;
+            color: #6B6D76;
             font-weight: bold;
             font-size: 1em;
             font-family: 'Raleway', sans-serif;

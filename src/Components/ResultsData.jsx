@@ -25,7 +25,7 @@ function ResultsData (props){
       <div style={styles}>
         {Object.keys(props.recipeList).map(recipeId => {
           let recipe = props.recipeList[recipeId];
-          return <ResultsDisplay image={recipe.image}
+          return <ResultsDisplay        image={recipe.image}
             title={recipe.title}
             link={recipe.link}
             ingredients={recipe.ingredients}
