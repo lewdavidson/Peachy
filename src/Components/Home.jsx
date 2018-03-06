@@ -37,7 +37,7 @@ function Home(props) {
 }
 
 Home.propTypes = {
-  recipeList: PropTypes.object
+  recipeList: PropTypes.object,
 };
 
 const mapStateToProps = state => {
