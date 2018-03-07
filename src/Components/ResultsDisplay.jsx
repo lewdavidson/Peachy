@@ -19,6 +19,7 @@ const ResultsDisplay = (props) => {
             width: 300px;
             background: white;
             max-height: 530px;
+            margin-bottom: 20px;
           }
           .result-body h4 {
             text-align: center;
@@ -32,7 +33,9 @@ const ResultsDisplay = (props) => {
           }
           .result-body ul {
             height: 100px;
-            margin-bottom: 30px;
+            max-height: 75px;
+            overflow: hidden;
+            margin-bottom: 20%;
           }
           .result-body p {
             text-align: center;

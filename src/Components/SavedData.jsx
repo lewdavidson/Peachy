@@ -9,15 +9,17 @@ import smSteps from './assets/smallsteps.png';
 
 function SavedData({recipeList}){
   const styles = {
-    height: '100vh',
+    height: '100%',
     flexWrap: 'wrap',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '25px',
     backgroundImage: 'url(' + smSteps + ')',
+    minHeight: '1500px',
   };
   const flex = {
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-between'
   };
 

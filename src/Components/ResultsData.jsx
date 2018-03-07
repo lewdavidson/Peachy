@@ -9,13 +9,14 @@ import smSteps from './assets/smallsteps.png';
 function ResultsData ({recipeList}){
   const styles = {
     display:'flex',
-    height: '100vh',
+    height: '100%',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     paddingLeft: '10px',
     paddingRight: '10px',
     paddingTop: '25px',
     backgroundImage: 'url(' + smSteps + ')',
+    minHeight: '1500px',
   };
 
   return(

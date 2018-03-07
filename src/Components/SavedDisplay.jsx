@@ -20,6 +20,7 @@ const SavedDisplay = (props)  => {
           width: 300px;
           background: white;
           max-height: 530px;
+          margin-bottom: 20px;
         }
         .saved-body h4 {
           text-align: center;
@@ -33,7 +34,9 @@ const SavedDisplay = (props)  => {
         }
         .saved-body ul {
           height: 100px;
-          margin-bottom: 30px;
+          max-height: 75px;
+          overflow: hidden;
+          margin-bottom: 20%;
         }
         .saved-body p {
           text-align: center;

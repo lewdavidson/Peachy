@@ -23,6 +23,9 @@ function Home(props) {
           a:hover {
             cursor: pointer;
           }
+          .result-page {
+            min-height: 1000px;
+          }
       `}</style>
       <Switch>
         <Route exact path='/' render={() => <HomeView />}/>
