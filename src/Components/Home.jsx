@@ -28,7 +28,7 @@ function Home(props) {
           }
       `}</style>
       <Switch>
-        <Route exact path='/' render={() => <HomeView />}/>
+        <Route exact path='/' render={() => <HomeView redirect={props.redirect} />}/>
         <Route path='/results' render={() => <ResultsData recipeList={props.recipeList} />}/>
         <Route path='/login' render={() => <UserAuth />} />
         <Route path='/signup' render={() => <UserAuth />} />
@@ -41,11 +41,13 @@ function Home(props) {
 
 Home.propTypes = {
   recipeList: PropTypes.object,
+  redirect: PropTypes.boolean,
 };
 
 const mapStateToProps = state => {
   return {
-    recipeList: state.recipesById
+    recipeList: state.recipesById,
+    redirect: state.redirect
   };
 };
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import SearchBar from './SearchBar';
 import Header from './Header';
 import UserAction from './UserAction';
 import peach from './assets/original.png';
 
-function HomeView() {
+function HomeView(props) {
   return(
     <div>
       <style jsx>{`
@@ -43,16 +44,18 @@ function HomeView() {
             height: 250px;
           }
           .search input {
-            width: 600px;
+            width: 500px;
             height: 25px;
             border-radius: 5px;
             margin-bottom: 10px;
+            margin-right: 10px;
             border: 1px solid black;
             font-family: 'Raleway', sans-serif;
             padding: 5px;
           }
           .search button {
-            height: 30px;
+            height: 35px;
+            align-self: center;
             width: 130px;
             border-radius: 5px;
             border: 2px solid black;
@@ -70,7 +73,7 @@ function HomeView() {
               <Header />
             </div>
             <div className='search'>
-              <SearchBar />
+              <SearchBar redirect={props.redirect}/>
               <UserAction />
             </div>
           </div>
@@ -82,5 +85,9 @@ function HomeView() {
     </div>
   );
 }
+
+HomeView.propTypes = {
+  redirect: PropTypes.boolean,
+};
 
 export default connect()(HomeView);
