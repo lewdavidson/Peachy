@@ -10,6 +10,13 @@ const SavedDisplay = (props)  => {
     return <li key={index}>{ingredient}</li>;
   });
 
+  const imgStyle = {
+    maxHeight: '150px',
+    margin : '0 auto',
+    width: '100%',
+    objectFit: 'cover',
+  };
+
   return (
     <div className='saved-body'>
       <style jsx>{`
@@ -51,7 +58,7 @@ const SavedDisplay = (props)  => {
           float: right;
         }
       `}</style>
-      <img className="saved-img" src={props.image}></img>
+      <img style={imgStyle} src={props.image}></img>
       <Link to='/singleitem'><h4>{props.title}</h4></Link>
       <p>Ingredients:</p>
       <ul>

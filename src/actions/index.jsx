@@ -11,6 +11,21 @@ export const addRecipe = (title, image, link, ingredients, recipeId) => ({
   recipeId,
 });
 
+export const changeRoute = () => ({
+  type: types.REDIRECT_HOME,
+});
+
+export const assignNewRecipeId = (recipeId) => ({
+  type: types.ASSIGN_ID,
+  recipeId,
+});
+
+export function handleNewRecipeId(recipeId) {
+  return function(dispatch) {
+    dispatch(assignNewRecipeId(recipeId));
+  };
+}
+
 export function fetchRecipe(title) {
   return function(dispatch) {
     title = title.split(' ').join('_');
@@ -34,36 +49,11 @@ export function fetchRecipe(title) {
   };
 }
 
-// const { firebaseConfig } = constants;
-// import Firebase from 'firebase';
 
-// firebase.initializeApp(firebaseConfig);
-// const recipes = firebase.database().ref('recipes');
-
-// export const receiveRecipe = (title, localRecipeId) => ({
-//   type: types.RECEIVE_RECIPE,
-//   title,
-//   recipeId: localRecipeId
-// });
-
-//will need some sort of change recipe action to pull up individual recipes at a time.
-
-// export const receiveRecipe = (recipeFromFirebase) => {
-//   return {
-//     type: types.RECEIVE_RECIPE,
-//     recipe: recipeFromFirebase
-//   };
-// };
-//will eventually handle retreiving recipes from firebase
-// export function watchFirebase(title) {
-//   return function(dispatch) {
-//     recipes.on('child_added', data =>{
-//       const newRecipe = Object.assign({}, data.val(),{
-//         id: data.getKey()
-//       });
-//       dispatch(receiveRecipe(newRecipe));
-//     });
+// export function routeHome() {
+//   if (this.state.redirect) {
+//     return(
+//       <Redirect to='/results'/>
+//     );
 //   }
 // }
-
-//will eventaully  watch firebase to update once recipe is added.

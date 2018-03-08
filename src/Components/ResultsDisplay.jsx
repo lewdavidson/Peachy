@@ -2,12 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import likeBtn from './assets/peach1.svg';
+import { connect } from 'react-redux';
+import { handleNewRecipeId } from './../actions';
 
 const ResultsDisplay = (props) => {
+  // let handleNewRecipeId;
   const ingredientsArray = props.ingredients;
   const ingredientsList = ingredientsArray.map(function(ingredient, index){
     return <li key={index}>{ingredient}</li>;
   });
+
+
+  function grabId (recipeId) {
+    console.log(recipeId);
+  //   dispatch(handleNewRecipeId(recipeId));
+  }
+
+  const imgStyle = {
+    maxHeight: '150px',
+    margin : '0 auto',
+    width: '100%',
+    objectFit: 'cover',
+  };
 
   return (
     <div className='result-body'>
@@ -27,6 +43,9 @@ const ResultsDisplay = (props) => {
             text-decoration: underline;
             font-size: 2em;
             color: #656839;
+            max-height: 40px;
+            overflow: hidden;
+            line-spacing: 20px;
           }
           .result-body h4:hover {
             cursor: pointer;
@@ -39,6 +58,7 @@ const ResultsDisplay = (props) => {
           }
           .result-body p {
             text-align: center;
+            overflow: hidden;
           }
           .result-body a {
             color: #656839;
@@ -50,8 +70,8 @@ const ResultsDisplay = (props) => {
             float: right;
           }
       `}</style>
-      <img className="result-img" src={props.image}></img>
-      <Link to='/singleitem'><h4>{props.title}</h4></Link>
+      <img style={imgStyle} src={props.image}></img>
+      <Link to='/singleitem'><h4 onClick={grabId(props.recipeId)}>{props.title}</h4></Link>
       <p>Ingredients:</p>
       <ul>
         {ingredientsList}
@@ -69,7 +89,8 @@ ResultsDisplay.propTypes = {
   title: PropTypes.string,
   ingredients: PropTypes.array,
   link: PropTypes.string,
-  itemId: PropTypes.string,
+  recipeId: PropTypes.any,
+  dispatch: PropTypes.func,
 };
 
-export default ResultsDisplay;
+export default connect()(ResultsDisplay);

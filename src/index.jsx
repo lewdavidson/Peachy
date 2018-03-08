@@ -10,6 +10,7 @@ import Home from './Components/Home';
 
 const store = createStore(recipeGetReducer, applyMiddleware(thunkMiddleware));
 
+
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>

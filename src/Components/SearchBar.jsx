@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { fetchRecipe } from './../actions';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({dispatch, redirect}) => {
+
+const SearchBar = ({dispatch}) => {
   let input;
   return (
     <div>
       <form onSubmit = {event =>{
-        state.redirect === true;
         event.preventDefault();
         if(!input.value.trim()) {
           return;
@@ -26,9 +26,9 @@ const SearchBar = ({dispatch, redirect}) => {
     </div>
   );
 };
+
 SearchBar.propTypes = {
   dispatch: PropTypes.func,
-  redirect: PropTypes.boolean
 };
 
 export default connect()(SearchBar);

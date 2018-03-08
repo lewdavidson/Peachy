@@ -1,7 +1,8 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 import UserAction from './UserAction';
 import logo from './assets/peach2.svg';
+import { connect } from 'react-redux';
 
 function StandardNav() {
   return (
@@ -34,6 +35,8 @@ function StandardNav() {
           }
           .options {
             font-family: 'Raleway', sans-serif;
+            align-items: center;
+            margin-right: 15px;
           }
           input {
             width: 300px;
@@ -58,7 +61,6 @@ function StandardNav() {
           <h2>PEACHY</h2>
         </div>
         <div className="options">
-          <SearchBar />
           <div className="links">
             <UserAction />
           </div>
@@ -68,4 +70,4 @@ function StandardNav() {
   );
 }
 
-export default StandardNav;
+export default connect()(StandardNav);

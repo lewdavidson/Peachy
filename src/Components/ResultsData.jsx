@@ -30,8 +30,8 @@ function ResultsData ({recipeList}){
             title={recipe.title}
             link={recipe.link}
             ingredients={recipe.ingredients}
-            key={recipeId}
-            recipeId={recipeId}/>;
+            key={recipe.recipeId}
+            recipeId={recipe.recipeId}/>;
         })}
       </div>
       <Footer />

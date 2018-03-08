@@ -28,12 +28,12 @@ function Home(props) {
           }
       `}</style>
       <Switch>
-        <Route exact path='/' render={() => <HomeView redirect={props.redirect} />}/>
+        <Route exact path='/' render={() => <HomeView />}/>
         <Route path='/results' render={() => <ResultsData recipeList={props.recipeList} />}/>
         <Route path='/login' render={() => <UserAuth />} />
         <Route path='/signup' render={() => <UserAuth />} />
         <Route path='/saved' render={() => <SavedData  recipeList={props.recipeList} />} />
-        <Route path='/singleitem' render={() => <IndividualResultDisplay />} />
+        <Route path='/singleitem' render={() => <IndividualResultDisplay selectedRecipe={props.selectedRecipe} />} />
       </Switch>
     </div>
   );
@@ -41,13 +41,13 @@ function Home(props) {
 
 Home.propTypes = {
   recipeList: PropTypes.object,
-  redirect: PropTypes.boolean,
+  selectedRecipe: PropTypes.object
 };
 
 const mapStateToProps = state => {
   return {
     recipeList: state.recipesById,
-    redirect: state.redirect
+    selectedRecipe: state.currentRecipeId,
   };
 };
 
