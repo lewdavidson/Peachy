@@ -88,11 +88,6 @@ If save button is pressed again, isSaved is null, remove from savedRecipes.
 I have determined that State needs to live in the Home component. This is where the user reaches a "fork in the road", either log in/ sign up or proceed to search as a guest. Home is the closest common parent to those two "forks" and therefore should be my stateful component.
 
 
-### Data Flow Map:
-
-![data map](DataFlow.jpg)
-___
-
 ### To-Do:
 
  Using the [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) article, begin building the site using these steps:
