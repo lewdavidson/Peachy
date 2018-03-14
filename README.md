@@ -8,7 +8,7 @@
 > A vegan recipe website that allows users to search recipes using keywords to return results. Eventual functionality will include: the ability to create an account, save and share recipes across social media, and use recipes to create a grocery list.
 
 ### Setup Instructions:
-* copy (this repo link)[https://github.com/lewdavidson/Peachy.git]
+* copy [this repo link](https://github.com/lewdavidson/Peachy.git)
 * $ cd Desktop
 * $ git clone (repo link)
 * $ cd Peachy
